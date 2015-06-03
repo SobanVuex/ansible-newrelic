@@ -1,0 +1,13 @@
+---
+
+- name: Install newrelic-sysmond
+  apt:
+    name: newrelic-sysmond
+    state: "{{ newrelic_sysmond_upgrade | ternary('latest', 'present') }}"
+  register: newrelic_sysmond_install
+
+- name: Configure newrelic-sysmond
+  shell: >
+    nrsysmond-config --set license_key={{ newrelic_license_key | quote }}
+  when: newrelic_sysmond_install.changed
+  notify: Restart newrelic sysmond

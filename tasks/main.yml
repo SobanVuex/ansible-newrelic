@@ -1,0 +1,13 @@
+---
+
+- include: repository.yml
+
+- name: Check if `newrelic_license_key` is defined
+  assert:
+    that: newrelic_license_key is defined
+
+- include: sysmond.yml
+  when: newrelic_sysmond
+
+- include: agent_php.yml
+  when: newrelic_agent_php

@@ -1,0 +1,15 @@
+---
+
+- name: Install repository key
+  apt_key:
+    url: https://download.newrelic.com/548C16BF.gpg
+
+- name: Install repository
+  apt_repository:
+    repo: deb http://apt.newrelic.com/debian newrelic non-free
+  register: newrelic_apt_repository
+
+- name: Update repository cache
+  apt:
+    update_cache: yes
+  when: newrelic_apt_repository.changed

@@ -1,0 +1,23 @@
+---
+
+galaxy_info:
+  author: Alex Soban
+  description: Software Analytics for better app performance customer experience business results
+  issue_tracker_url: https://github.com/SobanVuex/ansible-newrelic/issues
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  categories:
+  - cloud
+  - database
+  - monitoring
+  - networking
+  - system
+  - web
+dependencies: []

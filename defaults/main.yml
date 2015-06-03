@@ -1,0 +1,6 @@
+---
+
+newrelic_sysmond: True
+newrelic_sysmond_upgrade: False
+
+newrelic_agent_php: False
